@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 //used in Board
 function increment(props){
     return (

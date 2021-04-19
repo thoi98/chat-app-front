@@ -14,6 +14,15 @@ class classCounter extends Component {
         this.setState({count:this.state.count+1});
     }
 
+    componentDidMount()
+    {
+        document.title= `click:${this.state.count}`;
+    }
+
+    componentDidUpdate()
+    {
+        document.title= `click:${this.state.count}`;
+    }
 
     render() {
         return (
