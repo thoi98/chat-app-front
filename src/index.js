@@ -4,6 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//--------------------------------------------------------------------------------
+import { ApolloProvider } from '@apollo/react-hooks';
+
+const App = () => (
+  <ApolloProvider client={client}>
+    <div>
+      <h2>My first Apollo app 🚀</h2>
+    </div>
+  </ApolloProvider>
+);
+
+//--------------------------------------------------------------------------------
 ReactDOM.render(
   <React.StrictMode>
     <App />
