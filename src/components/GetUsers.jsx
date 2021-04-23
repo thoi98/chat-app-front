@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {useQuery} from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
@@ -10,8 +10,7 @@ const GET_USERS = gql`{
 }
 `;
 
-function GetUsers(){
-        
+function get(){
     const {loading,error,data} = useQuery(GET_USERS);
 
     if (loading) return <p>Loading...</p>;
@@ -25,6 +24,12 @@ function GetUsers(){
                 </p>
             </div>
     ));
+}
+
+function GetUsers(){
+    const [show,setShow] = useState(<div>
+        <p>got no chill</p>
+    </div>)
 }
 
 export default GetUsers;
