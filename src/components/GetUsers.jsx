@@ -1,12 +1,11 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import { ApolloConsumer } from '@apollo/client';
 
 const GET_USERS = gql`{
-    AllRooms{
+    userList {
         _id
-        name
+        username
     }
 }
 `;
@@ -18,11 +17,11 @@ function GetUsers(){
     if (loading) return <p>Loading...</p>;
     
     if (error) return <p>Error :(</p>;
-    
-        return data.AllRooms.map(({_id,name})=>(
+    console.log(data)
+        return data.userList.map(({_id,username})=>(
             <div key={_id}>
                 <p>
-                    {name}
+                    {username}
                 </p>
             </div>
     ));
