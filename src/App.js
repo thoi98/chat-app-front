@@ -6,6 +6,7 @@ import ApolloClient from 'apollo-boost';
 import GetRooms from './components/GetRooms';
 import {useState} from 'react';
 import GetChat from './components/Getchat';
+import TwoQuery from './components/TwoQuery';
 
 import { InMemoryCache } from "@apollo/client";
 
@@ -40,7 +41,7 @@ function App() {
       <div>
         {/* <button onClick={()=>{setShow(<GetRooms/>);}}>Fetch</button> */}
         {/* {show} */}
-        <GetChat/>
+        <TwoQuery/>
       </div>
     </ApolloProvider>
   );
