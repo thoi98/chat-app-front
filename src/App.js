@@ -3,9 +3,9 @@ import './App.css';
 import {ApolloProvider} from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
-import GetRooms from './components/GetRooms';
-import {useState} from 'react';
-import GetChat from './components/Getchat';
+// import GetRooms from './components/GetRooms';
+// import {useState} from 'react';
+// import GetChat from './components/Getchat';
 import TwoQuery from './components/TwoQuery';
 
 import { InMemoryCache } from "@apollo/client";
@@ -34,7 +34,7 @@ const client = new ApolloClient({
 
 
 function App() {
-  const [show,setShow] = useState(<p>Nothing</p>);
+  // const [show,setShow] = useState(<p>Nothing</p>);
 
   return (
     <ApolloProvider client={client}>

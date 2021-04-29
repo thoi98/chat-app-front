@@ -12,7 +12,7 @@ const GET_ROOMS = gql`{
 
 function GetRooms(){
     
-    const {loading,error,data,fetchMore} = useQuery(GET_ROOMS,{
+    const {loading,error,data} = useQuery(GET_ROOMS,{
         variables:{
             offset:0,
             limit:2,

@@ -19,18 +19,19 @@ const GET_CHAT = gql`
 }`;
 
 function TwoQuery(){
-    const {loading,error,data} = useQuery(GET_ROOMS);
+    const {loading:l1,data:d1} = useQuery(GET_ROOMS);
 
-    const {loading:loadingC,error:errorC,data:dataC} = useQuery(GET_CHAT,{
+    const {loading:l2,data:d2} = useQuery(GET_CHAT,{
         variables:{
             roomId: "608851227be4796a8463607a",
         },
     });
 
-    // if (objRooms.loading) return <p>Loading...</p>;
     
-    // if (objRooms.error) return <p>Error :(</p>;
-    const res1 = data.AllRooms.map(({_id,name})=>(
+    if(l1 || l2) return <p>loading...</p>;
+
+
+    const res1 = d1.AllRooms.map(({_id,name})=>(
         <div key={_id}>
             <p>
                 {name}
@@ -38,12 +39,7 @@ function TwoQuery(){
         </div>
     ));
 
-    
-
-    // if (objChat.loading) return <p>Loading...</p>;
-    
-    // if (objChat.error) return <p>Error :(</p>;
-    const res2 = dataC.getChat.chat.map(txt => <p>{txt}</p>);
+    const res2 = d2.getChat.chat.map(txt => <p>{txt}</p>);
     
     return [res1,res2];
 }
