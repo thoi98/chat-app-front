@@ -43,7 +43,10 @@ function TwoQuery(){
 
     
     if(l1 || l2) return <p>loading...</p>;
-
+    else{
+        cursor = d2.getChat.first;
+        console.log("cursor 2",cursor);
+    }
 
     const res1 = d1?.getChat?.chat.map(txt => <p>{txt}</p>);
 
